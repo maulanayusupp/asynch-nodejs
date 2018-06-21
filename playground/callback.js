@@ -3,6 +3,7 @@ var getUser = (id, callback) => {
 		id: id,
 		name: "Maulana Yusup Abdullah",
 	};
+
 	callback(user);
 	console.log("Call Callback");
 
@@ -14,5 +15,6 @@ var getUser = (id, callback) => {
 
 getUser(31, (userObject) => {
 	console.log("In Function Callback");
+
 	console.log(userObject);
 });
