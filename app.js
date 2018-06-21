@@ -21,5 +21,12 @@ var params = {
 	json: true
 }
 request(params, (error, response, body) => {
-	console.log(JSON.stringify(body, undefined, 2));
+	if (error) {
+		console.log('Unable to connect to Google servers.');
+	} else if(body.status === 'ZERO_RESULTS') {
+		console.log('Unabel to find that address.');
+	} else if(body.status === 'OK') {
+		console.log(JSON.stringify(body, undefined, 2));
+	}
+
 });
